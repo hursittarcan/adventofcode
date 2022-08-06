@@ -7,4 +7,13 @@ function readFile(filename) {
 
 let measurements = readFile('input.txt');
 
-console.log(measurements);
+let totalMeasurementIncreases = 0;
+for (let i = 0; i < measurements.length; i++) {
+    let previousNumber = measurements[i - 1];
+    let currentNumber = measurements[i];
+
+    if (currentNumber > previousNumber) {
+        totalMeasurementIncreases++;
+    }
+}
+console.log(totalMeasurementIncreases);
