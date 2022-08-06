@@ -1,13 +1,10 @@
-const {readFileSync, promises: fsPromises} = require('fs');
+const { readFileSync } = require('fs');
 
-function syncReadFile(filename) {
+function readFile(filename) {
     const contents = readFileSync(filename, 'utf-8');
-
-    const arr = contents.split(/\r?\n/);
-
-    console.log(arr); // 👉️ ['One', 'Two', 'Three', 'Four']
-
-    return arr;
+    return contents.split(/\r?\n/);
 }
 
-syncReadFile('./input.txt');
+let measurements = readFile('input.txt');
+
+console.log(measurements);
