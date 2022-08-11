@@ -25,6 +25,4 @@ for (let i = 0; i < roadmap.length; i++) {
     }
 }
 
-console.log(position) ;
-console.log(depth);
-console.log(position * depth);
+console.log("PART 1: " + position * depth);
