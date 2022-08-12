@@ -14,6 +14,19 @@ function max(arr){
     ).pop();
 }
 
+function swap(stringToSwap) {
+    let swappedString = "";
+    for (let i = 0; i < stringToSwap.length; i++) {
+        if (stringToSwap[i] === '1') {
+            swappedString += "0";
+        }
+        else {
+            swappedString += "1"
+        }
+    }
+    return swappedString;
+}
+
 let bitValue = "";
 
 const splitNumberOne = [];
@@ -33,3 +46,7 @@ for (let i = 0; i < report.length; i++) {
 }
 bitValue += max(splitNumberOne) + max(splitNumberTwo) + max(splitNumberThree) + max(splitNumberFour) + max(splitNumberFive);
 console.log(bitValue)
+console.log(swap(bitValue))
+let numberOne = parseInt(bitValue, 2);
+let numberTwo = parseInt(swap(bitValue), 2);
+console.log(numberOne * numberTwo);
