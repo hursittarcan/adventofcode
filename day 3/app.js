@@ -48,3 +48,4 @@ valueArray.forEach(value => {
 
 let number = parseInt(str.replace("undefined", ""), 2) * parseInt(swap(str.replace("undefined", "")), 2);
 console.log(number)
+//PART ONE DONE!
