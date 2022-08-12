@@ -27,26 +27,24 @@ function swap(stringToSwap) {
     return swappedString;
 }
 
-let bitValue = "";
+let values = "";
 
-const splitNumberOne = [];
-const splitNumberTwo = [];
-const splitNumberThree = [];
-const splitNumberFour = [];
-const splitNumberFive = [];
-
-for (let i = 0; i < report.length; i++) {
-    splitNumberOne.push(report[i][0]);
-    splitNumberTwo.push(report[i][1]);
-    splitNumberThree.push(report[i][2]);
-    splitNumberFour.push(report[i][3]);
-    splitNumberFive.push(report[i][4]);
-
-
+for (let i = 0; i < report[0].length; i++) {
+    for (let j = 0; j < report.length; j++) {
+        values += report[j][i];
+    }
+    values += ","
 }
-bitValue += max(splitNumberOne) + max(splitNumberTwo) + max(splitNumberThree) + max(splitNumberFour) + max(splitNumberFive);
-console.log(bitValue)
-console.log(swap(bitValue))
-let numberOne = parseInt(bitValue, 2);
-let numberTwo = parseInt(swap(bitValue), 2);
-console.log(numberOne * numberTwo);
+let str = "";
+
+let valueArray = values.split(',');
+valueArray.forEach(value => {
+    let bitValues = [];
+    for (let i = 0; i < value.length - 1; i++) {
+        bitValues.push(value[i]);
+    }
+    str += max(bitValues);
+})
+
+let number = parseInt(str.replace("undefined", ""), 2) * parseInt(swap(str.replace("undefined", "")), 2);
+console.log(number)
